@@ -1,10 +1,12 @@
 $(document).ready(function(){
-    
+    //Here i initialize my 5 variables, and give them all a default value.
     var playerChoice = 0;
     var computerChoice = 0;
     var output = "Default Value";
     var playerWinCount=0;
     var computerWinCount = 0;
+    
+    //These 5 click functions assign the playerChoice variable to the object chosen, and assign a random number between 1 and 5 to thr computerChoice
     $('#rock').click(function(){
         playerChoice = 1;
         
@@ -44,8 +46,15 @@ $(document).ready(function(){
         
 	});	
     
+    //This if-else-if tree does a few things.
+    
     $('.buttons').click(function(){
+        
+        //this line halts the code if either WinCount reaches 2
        if (playerWinCount< 2 && computerWinCount <2){
+           
+           
+        //These blocks have an if statement for every possible combination of objects. winning combinations incriment the playerWinCount, losing games incriment the computerWinCount
         if (playerChoice == 1){
             if(computerChoice == 1){
                 $('#outputZone').html("Tie with rock");
@@ -177,6 +186,8 @@ $(document).ready(function(){
             }
         }
         
+           
+    //This sets the html of the #winnerZone to a string displaying the winner
         if (playerWinCount == 2){
             $('#winnerZone').html("You Win!");
         }
